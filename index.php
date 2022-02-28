@@ -1,4 +1,4 @@
 <?php
 
-Location('./index.html')
+Location('location:./index.html')
 ?>
