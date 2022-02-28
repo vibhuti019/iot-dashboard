@@ -16,7 +16,6 @@ const controlList = [light, shades, audio, coffee];
 controlls.map(controll => {
   controll.addEventListener('click', (e) => {
     controll.classList.toggle('controlls__tab--active');
-
     let stateId = (e.currentTarget.innerHTML).match('(?:id=\")[a-z]*(?:\")');
     const id = stateId[0].slice(4, -1);
     controlList.filter(elem => {
@@ -26,8 +25,10 @@ controlls.map(controll => {
           http.onreadystatechange = function(){
             if(http.readyState == 4){
               console.log(this.responseText)
+              console.log(this)
               if(this.responseText == "0" || !this.responseText){
                 console.log(true)
+                controll.classList.toggle('controlls__tab--active');
                 alert("Please wait for 30 seconds before update")
                 return false
               }
@@ -59,8 +60,10 @@ controlls.map(controll => {
           http.onreadystatechange = function(){
             if(http.readyState == 4){
               console.log(this.responseText)
+              console.log(this)
               if(this.responseText == "0" || !this.responseText){
                 console.log(true)
+                controll.classList.toggle('controlls__tab--active');
                 alert("Please wait for 30 seconds before update!!")
                 return false;
               }
@@ -111,8 +114,11 @@ power.addEventListener('click', (e) => {
     xhttp.onreadystatechange = function(){
       if(xhttp.readyState == 4){
         console.log(this.responseText)
+        console.log(this)
         if(this.responseText == "0" || !this.responseText){
           console.log(true)
+          circleFill.classList.toggle('weather__circle-fill--on');
+          power.classList.toggle('weather__power--active');
           alert("Please wait for 30 seconds before update")
           return false
         }
@@ -128,8 +134,11 @@ power.addEventListener('click', (e) => {
     xhttp.onreadystatechange = function(){
       if(xhttp.readyState == 4){
         console.log(this.responseText)
+        console.log(this)
         if(this.responseText == "0" || !this.responseText){
           console.log(true)
+          circleFill.classList.toggle('weather__circle-fill--on');
+          power.classList.toggle('weather__power--active');
           alert("Please wait for 30 seconds before update")
           return false
         }
