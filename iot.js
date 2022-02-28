@@ -28,7 +28,7 @@ controlls.map(controll => {
             if(this.responseText == "0" || !this.responseText){
               console.log(true)
               var rehttp = new XMLHttpRequest();
-              rehttp.onreadystatechange = this.onreadystatechange
+              
               rehttp.open("GET",this.responseURL,false);
               rehttp.send();
             }
@@ -61,7 +61,7 @@ controlls.map(controll => {
             if(this.responseText == "0" || !this.responseText){
               console.log(true)
               var rehttp = new XMLHttpRequest();
-              rehttp.onreadystatechange = this.onreadystatechange
+              
               rehttp.open("GET",this.responseURL,false);
               rehttp.send();
             }
@@ -116,7 +116,7 @@ power.addEventListener('click', (e) => {
       if(this.responseText == "0" || !this.responseText){
         console.log(true)
         var rehttp = new XMLHttpRequest();
-        rehttp.onreadystatechange = this.onreadystatechange
+        
         rehttp.open("GET",this.responseURL,false);
         rehttp.send();
       }
@@ -133,7 +133,7 @@ power.addEventListener('click', (e) => {
       if(this.responseText == "0" || !this.responseText){
         console.log(true)
         var rehttp = new XMLHttpRequest();
-        rehttp.onreadystatechange = this.onreadystatechange
+        
         rehttp.open("GET",this.responseURL,false);
         rehttp.send();
       }
