@@ -107,5 +107,11 @@ power.addEventListener('click', (e) => {
     tempNull.textContent = '--';
     tempAmount.textContent = null;
     tempDegrees.textContent = null;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+      console.log(this)
+    }  
+    xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",true)
+    xhttp.send()
   }
 })
