@@ -27,30 +27,30 @@ controlls.map(controll => {
             console.log(this.responseText)
             if(this.responseText == "0" || !this.responseText){
               console.log(true)
-              var rehttp = new XMLHttpRequest();
-              rehttp.onreadystatechange = this.onreadystatechange
-              rehttp.open("GET",this.responseURL,true);
-              rehttp.send();
+              // var rehttp = new XMLHttpRequest();
+              // rehttp.onreadystatechange = this.onreadystatechange
+              // rehttp.open("GET",this.responseURL,false);
+              // rehttp.send();
             }
           }  
           if(id == "light"){
             console.log(id + "OFF");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field1=0",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field1=0",false)
             http.send()
           }
           if(id == "shades"){
             console.log(id + "OFF");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field2=0",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field2=0",false)
             http.send()
           }
           if(id == "audio"){
             console.log(id + "OFF");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field3=0",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field3=0",false)
             http.send()
           }
           if(id == "coffee"){
             console.log(id + "OFF");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field4=0",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field4=0",false)
             http.send()
           }
           elem.textContent = 'OFF';
@@ -60,30 +60,30 @@ controlls.map(controll => {
             console.log(this.responseText)
             if(this.responseText == "0" || !this.responseText){
               console.log(true)
-              var rehttp = new XMLHttpRequest();
-              rehttp.onreadystatechange = this.onreadystatechange
-              rehttp.open("GET",this.responseURL,true);
-              rehttp.send();
+              // var rehttp = new XMLHttpRequest();
+              // rehttp.onreadystatechange = this.onreadystatechange
+              // rehttp.open("GET",this.responseURL,false);
+              // rehttp.send();
             }
           }  
           if(id == "light"){
             console.log(id + "ON");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field1=1",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field1=1",false)
             http.send()
           }
           if(id == "shades"){
             console.log(id + "ON");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field2=1",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field2=1",false)
             http.send()
           }
           if(id == "audio"){
             console.log(id + "ON");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field3=1",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field3=1",false)
             http.send()
           }
           if(id == "coffee"){
             console.log(id + "ON");
-            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field4=1",true)
+            http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field4=1",false)
             http.send()
           }
           elem.textContent = 'ON';
@@ -115,13 +115,13 @@ power.addEventListener('click', (e) => {
       console.log(this.responseText)
       if(this.responseText == "0" || !this.responseText){
         console.log(true)
-        var rehttp = new XMLHttpRequest();
-        rehttp.onreadystatechange = this.onreadystatechange
-        rehttp.open("GET",this.responseURL,true);
-        rehttp.send();
+        // var rehttp = new XMLHttpRequest();
+        // rehttp.onreadystatechange = this.onreadystatechange
+        // rehttp.open("GET",this.responseURL,false);
+        // rehttp.send();
       }
     }  
-    xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",true)
+    xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",false)
     xhttp.send()
   } else {
     tempNull.textContent = '--';
@@ -132,13 +132,13 @@ power.addEventListener('click', (e) => {
       console.log(this.responseText)
       if(this.responseText == "0" || !this.responseText){
         console.log(true)
-        var rehttp = new XMLHttpRequest();
-        rehttp.onreadystatechange = this.onreadystatechange
-        rehttp.open("GET",this.responseURL,true);
-        rehttp.send();
+        // var rehttp = new XMLHttpRequest();
+        // rehttp.onreadystatechange = this.onreadystatechange
+        // rehttp.open("GET",this.responseURL,false);
+        // rehttp.send();
       }
     }  
-    xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",true)
+    xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",false)
     xhttp.send()
   }
 })
