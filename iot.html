@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type = "text/css" href="iot1.css">
+  
+ 
+</head>
+  
+<body>
+
+<script src="https://kit.fontawesome.com/9ff39978d5.js" crossorigin="anonymous"></script>
+  
+<!--  HEADER  -->
+  <header class="header">  
+    <section class="header__section">
+      <i class="fas fa-bars header__icon"></i>
+      <h1 class="header__logo">IoT Admin</h1>
+    </section>
+    
+    <div class=" header__section--right">
+    <section class="header__section">
+      <i class="far fa-envelope header__mail"></i>
+      <a class="header__icon" href="#">CONTACT@EXAMPLE.COM</a>
+    </section>
+    
+    <section class="header__section">
+      <i class="fas fa-search header__icon"></i>
+      <i class="far fa-envelope header__icon"></i>
+      <i class="far fa-bell header__icon"></i>
+      <i class="fas fa-user-circle header__pic"></i>
+      <span>User Name</span>
+    </section>
+    </div>
+  </header>
+  
+  <section class="main-section">
+
+<!--   ASIDE MENU   -->
+    <aside class="menu">
+      <div class="menu__element">
+        <i class="fas fa-home"></i>
+        <span>IoT Dashboard</span>
+      </div>
+      <div class="menu__element">
+        <i class="fas fa-columns"></i>
+        <span>Controlls</span>
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="main__panel">
+        <section class="controlls">
+          
+<!--      CONTROLLERS      -->
+          <button class="controlls__tab">
+            <i class="far fa-lightbulb controlls__icon"></i>
+            <div class="controlls__text">
+              <h3 class="controlls__header">Light</h3>
+              <p class="controlls__state" id="light">OFF</p>
+            </div>
+          </button>
+          
+          <button class="controlls__tab">
+            <i class="fas fa-border-all controlls__icon"></i>
+            <div class="controlls__text">
+              <h3 class="controlls__header">Roller Shades</h3>
+              <p class="controlls__state" id="shades">OFF</p>
+            </div>
+          </button>
+          
+          <button class="controlls__tab">
+            <i class="fas fa-volume-up controlls__icon"></i>
+             <div class="controlls__text">
+              <h3 class="controlls__header">Wireless Audio</h3>
+              <p class="controlls__state" id="audio">OFF</p>
+            </div>
+          </button>
+          
+          <button class="controlls__tab">
+            <i class="fas fa-mug-hot controlls__icon"></i>
+            <div class="controlls__text">
+              <h3 class="controlls__header">Coffee Maker</h3>
+              <p class="controlls__state" id="coffee">OFF</p>
+            </div>
+          </button>
+        </section>
+
+<!--     WEATHER PANEL     -->
+        <section class="weather">
+          <nav class="weather__nav">
+            <span class="weather__nav--active">TEMPERATURE</span>
+            <span>HUMIDITY</span>
+          </nav>
+          
+          <div class="weather__temp">
+            <button class="fas fa-power-off weather__power" aria-label="power"></button>
+            <svg class="weather__circle" viewbox="0 0 33.83098862 33.83098862" width="200" height="200"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle class="weather__circle-state" stroke="#edf1f7" stroke-width="2" stroke-dasharray="72,72"
+                stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+              <circle class="weather__circle-background" stroke="#edf1f7" stroke-width=".2" fill="none" cx="16.91549431"
+                cy="16.91549431" r="15.91549431" />
+              <circle class="weather__circle-fill" stroke="#3166ff" stroke-width="2" stroke-dasharray="45,72"
+                stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+              <g class="weather__circle-info">
+                <text class="weather__amount" x="16.91549431" y="14.91549431" alignment-baseline="central"
+                  text-anchor="middle" font-size="6"></text>
+                <text class="weather__degrees" x="16.91549431" y="18.91549431" alignment-baseline="central"
+                  text-anchor="middle" font-size="2"></text>
+                <text class="weather__null" x="16.91549431" y="16.91549431" alignment-baseline="central"
+                  text-anchor="middle" font-size="6" fill="#8f9bb3">--</text>
+              </g>
+            </svg>
+          </div>
+            
+          <div class="weather-options">
+            <button class="far fa-snowflake weather-options__option weather-options__option--active"></button>
+            <button class="fas fa-sun weather-options__option"></button>
+            <button class="fab fa-hotjar weather-options__option"></button>
+            <button class="fas fa-sync-alt weather-options__option"></button>
+          </div>
+        </section>
+      </div>
+  
+<!--    FOOTER    -->
+      <footer class="footer">
+        <i class="fab fa-github"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin"></i>
+      </footer>
+    </main>
+  </section>
+	
+	 <script src = "iot.js"></script>
+	
+</body>
+</html>
