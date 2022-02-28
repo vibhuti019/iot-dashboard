@@ -24,7 +24,10 @@ controlls.map(controll => {
         if(!controll.classList.contains('controlls__tab--active')) {
           var http = new XMLHttpRequest();
           http.onreadystatechange = function(){
-            console.log(this)
+            console.log(this.responseText)
+            if(this.responseText == "0"){
+              this.send()
+            }
           }  
           if(id == "light"){
             console.log(id + "OFF");
@@ -50,8 +53,10 @@ controlls.map(controll => {
         } else {
           var http = new XMLHttpRequest();
           http.onreadystatechange = function(){
-            console.log(this)
-            console.log(id)
+            console.log(this.responseText)
+            if(this.responseText == "0"){
+              this.send()
+            }
           }  
           if(id == "light"){
             console.log(id + "ON");
@@ -109,7 +114,10 @@ power.addEventListener('click', (e) => {
     tempDegrees.textContent = null;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
-      console.log(this)
+      console.log(this.responseText)
+      if(this.responseText == "0"){
+        this.send()
+      }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",true)
     xhttp.send()
