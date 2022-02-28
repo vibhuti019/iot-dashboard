@@ -1,4 +1,4 @@
 <?php
 
-Location('location:./index.html')
+    header('Location:./index.html')
 ?>
