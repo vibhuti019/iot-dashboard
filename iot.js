@@ -25,7 +25,8 @@ controlls.map(controll => {
           var http = new XMLHttpRequest();
           http.onreadystatechange = function(){
             console.log(this.responseText)
-            if(this.responseText == "0"){
+            if(this.responseText == "0" || !this.responseText){
+              console.log(true)
               var rehttp = new XMLHttpRequest();
               rehttp.open("GET",this.responseURL,true);
               rehttp.send();
@@ -56,7 +57,8 @@ controlls.map(controll => {
           var http = new XMLHttpRequest();
           http.onreadystatechange = function(){
             console.log(this.responseText)
-            if(this.responseText == "0"){
+            if(this.responseText == "0" || !this.responseText){
+              console.log(true)
               var rehttp = new XMLHttpRequest();
               rehttp.open("GET",this.responseURL,true);
               rehttp.send();
@@ -109,7 +111,8 @@ power.addEventListener('click', (e) => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
       console.log(this.responseText)
-      if(this.responseText == "0"){
+      if(this.responseText == "0" || !this.responseText){
+        console.log(true)
         var rehttp = new XMLHttpRequest();
         rehttp.open("GET",this.responseURL,true);
         rehttp.send();
@@ -124,7 +127,8 @@ power.addEventListener('click', (e) => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
       console.log(this.responseText)
-      if(this.responseText == "0"){
+      if(this.responseText == "0" || !this.responseText){
+        console.log(true)
         var rehttp = new XMLHttpRequest();
         rehttp.open("GET",this.responseURL,true);
         rehttp.send();
