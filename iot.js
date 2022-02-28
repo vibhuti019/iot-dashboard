@@ -13,6 +13,89 @@ const audio = document.getElementById('audio');
 const coffee = document.getElementById('coffee');
 const controlList = [light, shades, audio, coffee];
 
+var lastUpdateAt = [null,0,0,0,0,0]
+
+function updatePage(current,toggleClass){
+  console.log("update")
+  fetch("https://api.thingspeak.com/channels/1664784/fields/"+current+"/last.json")
+  .then(response => {
+        console.log(response)
+        return response.json()  
+      }
+    )
+  .then(json => {
+    if(lastUpdateAt[current] == json["entry_id"]){
+      console.log("json["+current+"] ="+json["entry_id"] )
+      console.log(lastUpdateAt)
+      return false
+    }
+    if(json["field"+current] === undefined){
+      if(current == 5 && lastUpdateAt[5]!=0){
+        lastUpdateAt[current] = json["entry_id"]
+        circleFill.className.baseVal = 'weather__circle-fill'
+        power.className = 'fas fa-power-off weather__power'
+        tempNull.textContent = '--';
+        tempAmount.textContent = null;
+        tempDegrees.textContent = null;  
+        return true
+      }
+      
+      if(lastUpdateAt[current]!=0){
+        lastUpdateAt[current] = json["entry_id"]
+        toggleClass[current-1].className ='controlls__tab'
+        controlList[current-1].textContent = "OFF"
+        return true
+      }
+      
+      return false
+    }
+    if(json["field"+current] == 0){
+      if(current == 5 && lastUpdateAt[5]!=0){
+        lastUpdateAt[current] = json["entry_id"]
+        circleFill.className.baseVal = 'weather__circle-fill'
+        power.className = 'fas fa-power-off weather__power'
+        tempNull.textContent = '--';
+        tempAmount.textContent = null;
+        tempDegrees.textContent = null;  
+        return true
+      }
+      
+      if(lastUpdateAt[current]!=0){
+        lastUpdateAt[current] = json["entry_id"]
+        toggleClass[current-1].className ='controlls__tab'
+        controlList[current-1].textContent = "OFF"
+        return true
+      }
+      return false
+    }
+    if(current != 5){
+      lastUpdateAt[current] = json["entry_id"]
+      toggleClass[current-1].className ='controlls__tab controlls__tab--active'
+      controlList[current-1].textContent = "ON"
+      return true
+    }
+    lastUpdateAt[current] = json["entry_id"]
+    circleFill.className.baseVal = 'weather__circle-fill weather__circle-fill--on'
+    power.className = 'fas fa-power-off weather__power weather__power--active'
+    tempNull.textContent = null;
+    tempAmount.textContent = '24\xB0';
+    tempDegrees.textContent = 'Celsius';
+  });
+}
+
+async function run(){
+  var toggleClass = document.getElementsByClassName("controlls__tab")
+  for (let i = 1; i <=5; i++) { 
+    await updatePage(i,toggleClass)
+  }
+  // console.clear()
+}
+
+window.onload = function(){
+  run()
+  setInterval(run, 10000); 
+}
+
 controlls.map(controll => {
   controll.addEventListener('click', (e) => {
     controll.classList.toggle('controlls__tab--active');
