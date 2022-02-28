@@ -27,10 +27,10 @@ controlls.map(controll => {
             console.log(this.responseText)
             if(this.responseText == "0" || !this.responseText){
               console.log(true)
-              // var rehttp = new XMLHttpRequest();
-              // rehttp.onreadystatechange = this.onreadystatechange
-              // rehttp.open("GET",this.responseURL,false);
-              // rehttp.send();
+              var rehttp = new XMLHttpRequest();
+              rehttp.onreadystatechange = this.onreadystatechange
+              rehttp.open("GET",this.responseURL,false);
+              rehttp.send();
             }
           }  
           if(id == "light"){
@@ -60,10 +60,10 @@ controlls.map(controll => {
             console.log(this.responseText)
             if(this.responseText == "0" || !this.responseText){
               console.log(true)
-              // var rehttp = new XMLHttpRequest();
-              // rehttp.onreadystatechange = this.onreadystatechange
-              // rehttp.open("GET",this.responseURL,false);
-              // rehttp.send();
+              var rehttp = new XMLHttpRequest();
+              rehttp.onreadystatechange = this.onreadystatechange
+              rehttp.open("GET",this.responseURL,false);
+              rehttp.send();
             }
           }  
           if(id == "light"){
@@ -115,10 +115,10 @@ power.addEventListener('click', (e) => {
       console.log(this.responseText)
       if(this.responseText == "0" || !this.responseText){
         console.log(true)
-        // var rehttp = new XMLHttpRequest();
-        // rehttp.onreadystatechange = this.onreadystatechange
-        // rehttp.open("GET",this.responseURL,false);
-        // rehttp.send();
+        var rehttp = new XMLHttpRequest();
+        rehttp.onreadystatechange = this.onreadystatechange
+        rehttp.open("GET",this.responseURL,false);
+        rehttp.send();
       }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",false)
@@ -132,10 +132,10 @@ power.addEventListener('click', (e) => {
       console.log(this.responseText)
       if(this.responseText == "0" || !this.responseText){
         console.log(true)
-        // var rehttp = new XMLHttpRequest();
-        // rehttp.onreadystatechange = this.onreadystatechange
-        // rehttp.open("GET",this.responseURL,false);
-        // rehttp.send();
+        var rehttp = new XMLHttpRequest();
+        rehttp.onreadystatechange = this.onreadystatechange
+        rehttp.open("GET",this.responseURL,false);
+        rehttp.send();
       }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",false)
