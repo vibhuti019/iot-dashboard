@@ -24,13 +24,14 @@ controlls.map(controll => {
         if(!controll.classList.contains('controlls__tab--active')) {
           var http = new XMLHttpRequest();
           http.onreadystatechange = function(){
-            console.log(this.responseText)
-            if(this.responseText == "0" || !this.responseText){
-              console.log(true)
-              var rehttp = new XMLHttpRequest();
-              
-              rehttp.open("GET",this.responseURL,false);
-              rehttp.send();
+            if(http.readyState == 4){
+              console.log(this.responseText)
+              if(this.responseText == "0" || !this.responseText){
+                console.log(true)
+                alert("Please wait for 30 seconds before update")
+                return false
+              }
+              elem.textContent = 'OFF';
             }
           }  
           if(id == "light"){
@@ -53,19 +54,19 @@ controlls.map(controll => {
             http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field4=0",false)
             http.send()
           }
-          elem.textContent = 'OFF';
         } else {
           var http = new XMLHttpRequest();
           http.onreadystatechange = function(){
-            console.log(this.responseText)
-            if(this.responseText == "0" || !this.responseText){
-              console.log(true)
-              var rehttp = new XMLHttpRequest();
-              
-              rehttp.open("GET",this.responseURL,false);
-              rehttp.send();
-            }
-          }  
+            if(http.readyState == 4){
+              console.log(this.responseText)
+              if(this.responseText == "0" || !this.responseText){
+                console.log(true)
+                alert("Please wait for 30 seconds before update!!")
+                return false;
+              }
+              elem.textContent = 'ON';
+            }  
+          }
           if(id == "light"){
             console.log(id + "ON");
             http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field1=1",false)
@@ -86,7 +87,6 @@ controlls.map(controll => {
             http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field4=1",false)
             http.send()
           }
-          elem.textContent = 'ON';
         }
       }
     })
@@ -107,35 +107,35 @@ power.addEventListener('click', (e) => {
   power.classList.toggle('weather__power--active');
   
   if(tempNull.textContent == '--') {
-    tempNull.textContent = null;
-    tempAmount.textContent = '24\xB0';
-    tempDegrees.textContent = 'Celsius';
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
-      console.log(this.responseText)
-      if(this.responseText == "0" || !this.responseText){
-        console.log(true)
-        var rehttp = new XMLHttpRequest();
-        
-        rehttp.open("GET",this.responseURL,false);
-        rehttp.send();
+      if(xhttp.readyState == 4){
+        console.log(this.responseText)
+        if(this.responseText == "0" || !this.responseText){
+          console.log(true)
+          alert("Please wait for 30 seconds before update")
+          return false
+        }
+        tempNull.textContent = null;
+        tempAmount.textContent = '24\xB0';
+        tempDegrees.textContent = 'Celsius';  
       }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",false)
     xhttp.send()
   } else {
-    tempNull.textContent = '--';
-    tempAmount.textContent = null;
-    tempDegrees.textContent = null;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
-      console.log(this.responseText)
-      if(this.responseText == "0" || !this.responseText){
-        console.log(true)
-        var rehttp = new XMLHttpRequest();
-        
-        rehttp.open("GET",this.responseURL,false);
-        rehttp.send();
+      if(xhttp.readyState == 4){
+        console.log(this.responseText)
+        if(this.responseText == "0" || !this.responseText){
+          console.log(true)
+          alert("Please wait for 30 seconds before update")
+          return false
+        }
+        tempNull.textContent = '--';
+        tempAmount.textContent = null;
+        tempDegrees.textContent = null;  
       }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",false)
