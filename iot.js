@@ -101,8 +101,8 @@ power.addEventListener('click', (e) => {
     xhttp.onreadystatechange = function(){
       console.log(this)
     }  
-    http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",true)
-    http.send()
+    xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",true)
+    xhttp.send()
   } else {
     tempNull.textContent = '--';
     tempAmount.textContent = null;
