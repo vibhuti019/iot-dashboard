@@ -15,6 +15,16 @@ const controlList = [light, shades, audio, coffee];
 
 var lastUpdateAt = [null,0,0,0,0,0]
 
+function onCLickToggle(){
+  var currentState = document.getElementsByTagName("aside")[0].style.display
+  if(currentState == ""){
+    document.getElementsByTagName("aside")[0].style.display = "none"
+    return true
+  }
+  document.getElementsByTagName("aside")[0].style.display = ""
+}
+
+
 function updatePage(current,toggleClass){
   console.log("update")
   fetch("https://api.thingspeak.com/channels/1664784/fields/"+current+"/last.json")
