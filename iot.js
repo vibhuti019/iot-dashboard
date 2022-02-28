@@ -26,7 +26,9 @@ controlls.map(controll => {
           http.onreadystatechange = function(){
             console.log(this.responseText)
             if(this.responseText == "0"){
-              this.send()
+              var rehttp = new XMLHttpRequest();
+              reHttp.open("GET",this.responseURL,true);
+              this.send();
             }
           }  
           if(id == "light"){
@@ -55,7 +57,9 @@ controlls.map(controll => {
           http.onreadystatechange = function(){
             console.log(this.responseText)
             if(this.responseText == "0"){
-              this.send()
+              var rehttp = new XMLHttpRequest();
+              reHttp.open("GET",this.responseURL,true);
+              this.send();
             }
           }  
           if(id == "light"){
@@ -104,7 +108,12 @@ power.addEventListener('click', (e) => {
     tempDegrees.textContent = 'Celsius';
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
-      console.log(this)
+      console.log(this.responseText)
+      if(this.responseText == "0"){
+        var rehttp = new XMLHttpRequest();
+        reHttp.open("GET",this.responseURL,true);
+        this.send();
+      }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=24",true)
     xhttp.send()
@@ -116,7 +125,9 @@ power.addEventListener('click', (e) => {
     xhttp.onreadystatechange = function(){
       console.log(this.responseText)
       if(this.responseText == "0"){
-        this.send()
+        var rehttp = new XMLHttpRequest();
+        reHttp.open("GET",this.responseURL,true);
+        this.send();
       }
     }  
     xhttp.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field5=0",true)
