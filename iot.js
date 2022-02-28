@@ -19,11 +19,13 @@ controlls.map(controll => {
 
     let stateId = (e.currentTarget.innerHTML).match('(?:id=\")[a-z]*(?:\")');
     const id = stateId[0].slice(4, -1);
-    
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function(){
+      console.log(this)
+    }  
     controlList.filter(elem => {
       if(elem.id == id) {
         if(!controll.classList.contains('controlls__tab--active')) {
-          var http = new XMLHttpRequest();
           if(id == "light"){
             console.log(id + "OFF");
             http.open("GET","https://api.thingspeak.com/update?api_key=2E76H2Y9PYMEHZ7L&field1=0",true)
